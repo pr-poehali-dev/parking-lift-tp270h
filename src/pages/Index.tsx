@@ -261,9 +261,9 @@ const Page4 = () => (
   <div className="brochure-page flex flex-col" style={{ background: NAVY }}>
     <div className="h-1.5 w-full" style={{ background: ORANGE }} />
 
-    <div className="flex-1 px-10 py-8 grid grid-cols-2 gap-8">
-      {/* левая колонка: характеристики + стоимость */}
-      <div className="flex flex-col">
+    <div className="flex-1 px-10 pt-8 pb-5 flex flex-col gap-5">
+      {/* верхняя часть: характеристики + опции */}
+      <div className="grid grid-cols-2 gap-8">
         <div>
           <SectionLabel>Спецификация</SectionLabel>
           <H2 white>Технические характеристики</H2>
@@ -279,22 +279,6 @@ const Page4 = () => (
           </div>
         </div>
 
-        {/* стоимость */}
-        <div className="rounded-xl p-5 flex items-center gap-4 mt-5" style={{ background: ORANGE }}>
-          <div>
-            <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
-            <div className="font-display text-3xl font-bold text-white leading-none">от 450 000 ₽</div>
-            <div className="text-[11px] text-white opacity-75 mt-1">с учётом НДС</div>
-          </div>
-          <div className="ml-auto flex h-12 w-12 items-center justify-center rounded-xl flex-shrink-0"
-            style={{ background: 'rgba(255,255,255,0.2)' }}>
-            <Icon name="Tag" size={24} className="text-white" />
-          </div>
-        </div>
-      </div>
-
-      {/* правая колонка: опции + контакты */}
-      <div className="flex flex-col">
         <div>
           <SectionLabel>Опции</SectionLabel>
           <H2 white>Дополнительная комплектация</H2>
@@ -309,26 +293,38 @@ const Page4 = () => (
             ))}
           </div>
         </div>
+      </div>
 
-        {/* контакты — оранжевый стиль как у блока стоимости */}
-        <div className="rounded-xl p-5 flex items-center gap-4 mt-5" style={{ background: ORANGE }}>
-          <div className="flex-1">
-            <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-3">Связаться с нами</div>
-            <div className="space-y-2">
-              {[
-                { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'   },
-                { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru' },
-                { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'     },
-              ].map(c => (
-                <div key={c.label} className="flex items-center gap-2">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-lg flex-shrink-0"
-                    style={{ background: 'rgba(255,255,255,0.2)' }}>
-                    <Icon name={c.icon} size={13} className="text-white" />
-                  </div>
-                  <div className="font-display text-[12px] font-bold text-white">{c.val}</div>
+      {/* нижняя строка: стоимость + контакты на одной линии */}
+      <div className="grid grid-cols-2 gap-8">
+        <div className="rounded-xl p-5 flex items-center gap-4" style={{ background: ORANGE }}>
+          <div>
+            <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
+            <div className="font-display text-3xl font-bold text-white leading-none">от 450 000 ₽</div>
+            <div className="text-[11px] text-white opacity-75 mt-1">с учётом НДС</div>
+          </div>
+          <div className="ml-auto flex h-12 w-12 items-center justify-center rounded-xl flex-shrink-0"
+            style={{ background: 'rgba(255,255,255,0.2)' }}>
+            <Icon name="Tag" size={24} className="text-white" />
+          </div>
+        </div>
+
+        <div className="rounded-xl p-5" style={{ background: ORANGE }}>
+          <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-3">Связаться с нами</div>
+          <div className="space-y-2">
+            {[
+              { icon: 'Phone', val: '8-905-975-58-88'   },
+              { icon: 'Mail',  val: 'itc2555888@mail.ru' },
+              { icon: 'Globe', val: 'itc-siberia.ru'     },
+            ].map(c => (
+              <div key={c.val} className="flex items-center gap-2">
+                <div className="flex h-6 w-6 items-center justify-center rounded-lg flex-shrink-0"
+                  style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <Icon name={c.icon} size={13} className="text-white" />
                 </div>
-              ))}
-            </div>
+                <div className="font-display text-[12px] font-bold text-white">{c.val}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
