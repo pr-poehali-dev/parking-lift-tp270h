@@ -126,18 +126,7 @@ const Page1 = () => (
           Одноцилиндровый двухстоечный гидравлический парковочный подъёмник. Два автомобиля — одно машиноместо.
         </p>
 
-        {/* статы */}
-        <div className="mt-6 grid grid-cols-2 gap-3">
-          {heroStats.map(s => (
-            <div key={s.label} className="rounded-lg px-3 py-2"
-              style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}>
-              <div className="font-display font-bold leading-none" style={{ color: ORANGE, fontSize: '22px' }}>
-                {s.value} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.unit}</span>
-              </div>
-              <div className="text-[9px] uppercase tracking-wider mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
+
       </div>
 
       <div className="flex items-center">
