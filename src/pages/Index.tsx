@@ -108,7 +108,7 @@ const Page1 = () => (
     </div>
 
     {/* картинка — занимает оставшееся место */}
-    <div className="flex-1 px-10 pt-2 min-h-0" style={{ marginTop: '50%' }}>
+    <div className="flex-1 px-10 pt-2 min-h-0" style={{ marginTop: '25%' }}>
       <div className="overflow-hidden rounded-xl w-full h-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
         <img src={IMG_HERO} alt="TP-270H" className="w-full h-full object-cover object-center" style={{ display: 'block' }} />
       </div>
