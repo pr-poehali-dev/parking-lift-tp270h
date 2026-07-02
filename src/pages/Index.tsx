@@ -262,26 +262,24 @@ const Page4 = () => (
     <div className="h-1.5 w-full" style={{ background: ORANGE }} />
 
     <div className="flex-1 px-10 py-8 grid grid-cols-2 gap-8">
-      {/* характеристики */}
-      <div>
-        <SectionLabel>Спецификация</SectionLabel>
-        <H2 white>Технические характеристики</H2>
-        <div className="mt-4 rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-          {specs.map(([k, v], i) => (
-            <div key={k}
-              className="grid grid-cols-2 gap-2 px-3 py-2 text-[10px]"
-              style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.06)' : 'transparent' }}>
-              <span style={{ color: 'rgba(255,255,255,0.55)' }}>{k}</span>
-              <span className="text-right font-semibold text-white">{v}</span>
-            </div>
-          ))}
+      {/* левая колонка: характеристики + стоимость */}
+      <div className="flex flex-col gap-5">
+        <div>
+          <SectionLabel>Спецификация</SectionLabel>
+          <H2 white>Технические характеристики</H2>
+          <div className="mt-4 rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+            {specs.map(([k, v], i) => (
+              <div key={k}
+                className="grid grid-cols-2 gap-2 px-3 py-2 text-[10px]"
+                style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.06)' : 'transparent' }}>
+                <span style={{ color: 'rgba(255,255,255,0.55)' }}>{k}</span>
+                <span className="text-right font-semibold text-white">{v}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* опции + контакты */}
-      <div className="flex flex-col gap-6">
-
-        {/* стоимость */}
+        {/* стоимость — под характеристиками */}
         <div className="rounded-xl p-5 flex items-center gap-4" style={{ background: ORANGE }}>
           <div>
             <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
@@ -293,7 +291,10 @@ const Page4 = () => (
             <Icon name="Tag" size={24} className="text-white" />
           </div>
         </div>
+      </div>
 
+      {/* правая колонка: опции + контакты */}
+      <div className="flex flex-col gap-6">
         <div>
           <SectionLabel>Опции</SectionLabel>
           <H2 white>Дополнительная комплектация</H2>
@@ -310,21 +311,20 @@ const Page4 = () => (
         </div>
 
         {/* контакты */}
-        <div className="rounded-xl p-5" style={{ background: ORANGE }}>
+        <div className="rounded-xl p-5" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
           <div className="font-display text-base font-bold uppercase text-white mb-3">Связаться с нами</div>
           <div className="space-y-2">
             {[
-              { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'    },
-              { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru'  },
-              { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'      },
+              { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'   },
+              { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru' },
+              { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'     },
             ].map(c => (
               <div key={c.label} className="flex items-center gap-3">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg"
-                  style={{ background: 'rgba(255,255,255,0.2)' }}>
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg" style={{ background: ORANGE }}>
                   <Icon name={c.icon} size={14} className="text-white" />
                 </div>
                 <div>
-                  <div className="text-[8px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.7)' }}>{c.label}</div>
+                  <div className="text-[8px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>{c.label}</div>
                   <div className="font-display text-[13px] font-bold text-white">{c.val}</div>
                 </div>
               </div>
@@ -337,14 +337,7 @@ const Page4 = () => (
     {/* подвал обложки */}
     <div className="px-10 py-4 flex items-center justify-between"
       style={{ background: 'rgba(0,0,0,0.25)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-      <div className="flex items-center gap-2">
-        <img
-          src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
-          alt="ИТЦ Сибири"
-          style={{ height: '36px', width: '36px', objectFit: 'contain', mixBlendMode: 'screen' }}
-        />
-        <span className="font-display text-sm font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
-      </div>
+      <span className="font-display text-sm font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
       <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>
         Производитель оставляет за собой право вносить изменения. Расхождение габаритов ±50 мм.
       </span>
