@@ -1,321 +1,390 @@
 import Icon from '@/components/ui/icon';
-import { Button } from '@/components/ui/button';
 
 const IMG_HERO = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/6b78e395-3714-4ed5-be53-9db9f06a2aa4.jpg';
 const IMG_GARAGE = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/ac079f35-94b2-44fe-92af-69ef7d9c41ad.jpg';
 const IMG_DRAWING = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/47776086-c453-4bb6-96ce-3f3398af581c.jpg';
 
+/* ─── константы ──────────────────────────────────────────── */
+const NAVY = 'hsl(215,55%,18%)';
+const ORANGE = 'hsl(20,90%,52%)';
+const LIGHT_BG = 'hsl(210,20%,98%)';
+
 const heroStats = [
-  { value: '2 700', unit: 'кг', label: 'Грузоподъёмность' },
-  { value: '2 100', unit: 'мм', label: 'Высота подъёма' },
-  { value: '60', unit: 'сек', label: 'Время подъёма' },
-  { value: '1', unit: 'цилиндр', label: 'Гидропривод' },
+  { value: '2 700', unit: 'кг',     label: 'Грузоподъёмность' },
+  { value: '2 100', unit: 'мм',     label: 'Высота подъёма'   },
+  { value: '60',    unit: 'сек',    label: 'Время подъёма'    },
+  { value: '1',     unit: 'цил.',   label: 'Гидропривод'      },
 ];
 
 const advantages = [
-  { icon: 'Cylinder', title: 'Один гидроцилиндр', text: 'Революционная конструкция вместо двух цилиндров: проще монтаж, выше скорость парковки, ниже затраты на оборудование и обслуживание.' },
-  { icon: 'Zap', title: 'Высокая скорость', text: 'Более быстрый подъём и опускание платформы по сравнению с классической двухцилиндровой конструкцией TP-270.' },
-  { icon: 'ShieldCheck', title: 'Максимальная безопасность', text: 'Механические запирающие устройства, система против раскачивания, защита от перегрузки и кнопки аварийной остановки.' },
-  { icon: 'Ruler', title: 'Экономия пространства', text: 'Ширина 2,55 м умещается в типовое машиноместо. До трёх подъёмников в шаг колонн 7,5 м с общими опорами.' },
-  { icon: 'Wrench', title: 'Простой монтаж', text: 'Предварительно собранные детали и встроенный блок управления. Лёгкая разборка и перемещение конструкции.' },
-  { icon: 'Snowflake', title: 'Уличное исполнение', text: 'Опциональная комплектация для эксплуатации на придомовых территориях в диапазоне температур −30…+40 °C.' },
+  { icon: 'Cylinder',    title: 'Один гидроцилиндр',      text: 'Вместо двух цилиндров — один: проще монтаж, выше скорость, ниже затраты на обслуживание.' },
+  { icon: 'Zap',         title: 'Высокая скорость',        text: 'Быстрее подъём и опускание по сравнению с классической двухцилиндровой конструкцией TP-270.' },
+  { icon: 'ShieldCheck', title: 'Максимальная безопасность', text: 'Механические запоры, защита от перегрузки, кнопки аварийной остановки.' },
+  { icon: 'Ruler',       title: 'Экономия пространства',  text: 'Ширина 2,55 м. До трёх подъёмников в шаг колонн 7,5 м с общими опорами.' },
+  { icon: 'Wrench',      title: 'Простой монтаж',          text: 'Предварительно собранные детали и встроенный блок управления.' },
+  { icon: 'Snowflake',   title: 'Уличное исполнение',      text: 'Опция для работы при −30…+40 °C на придомовых территориях.' },
 ];
 
 const features = [
-  'Стандартная грузоподъёмность 2700 кг для двух больших внедорожников',
-  'Конструкция с одним цилиндром для повышения производительности',
-  'Более высокая скорость подъёма по сравнению с двухцилиндровой конструкцией',
-  'Предварительно собранные детали для удобства монтажа',
-  'Совместное использование — экономия стоимости и пространства',
-  'Простая разборка и перемещение',
+  'Грузоподъёмность 2700 кг для двух больших внедорожников',
+  'Единый гидроцилиндр — повышенная производительность',
+  'Более высокая скорость подъёма, чем у двухцилиндровых аналогов',
+  'Предварительно собранные детали — быстрый монтаж',
+  'Совместные опоры — экономия стоимости и пространства',
   'Встроенный блок управления для удобства подключения',
-  'Несколько высот парковки',
-  'Контроллер защитного ключа-переключателя',
+  'Несколько фиксируемых высот парковки',
+  'Контроллер с ключом-переключателем',
   'Противоскользящий пандус и платформа',
-  'Антикоррозийное гладкое порошковое покрытие',
-  'Усиленные антикоррозийные оцинкованные пластины',
+  'Антикоррозийное порошковое покрытие',
+  'Усиленные оцинкованные пластины',
+  'Простая разборка и перемещение конструкции',
 ];
 
 const specs = [
-  ['Производитель, марка', 'КНР, TP-270H'],
-  ['Вид привода', 'Гидравлический (один цилиндр)'],
-  ['Грузоподъёмность, кг', '≤ 2700'],
-  ['Высота подъёма платформы, мм', '2100'],
-  ['Ширина платформы, мм', '2100'],
-  ['Габариты ДхШхВ, мм', '4163 × 2550 × 3210'],
-  ['Габариты с гидростанцией, мм', '4163 × 2550 × 3445'],
-  ['Платформа', 'Прямая'],
-  ['Время подъёма/опускания, сек', '60 / 45'],
-  ['Электропитание', '3Ф, 380 В, 50 Гц'],
-  ['Вес установки, кг', '1050'],
-  ['Потребляемая мощность, кВт', '2,2'],
-  ['Установка', 'В помещении (+0…+45 °C)'],
-  ['Управление', 'Индивидуальный блок с ключом на выносной штанге'],
+  ['Производитель, марка',           'КНР, TP-270H'],
+  ['Вид привода',                    'Гидравлический (1 цилиндр)'],
+  ['Грузоподъёмность, кг',           '≤ 2700'],
+  ['Высота подъёма платформы, мм',   '2100'],
+  ['Ширина платформы, мм',           '2100'],
+  ['Габариты ДхШхВ, мм',            '4163 × 2550 × 3210'],
+  ['Габариты с гидростанцией, мм',   '4163 × 2550 × 3445'],
+  ['Платформа',                      'Прямая'],
+  ['Время подъёма / опускания, сек', '60 / 45'],
+  ['Электропитание',                 '3Ф, 380 В, 50 Гц'],
+  ['Вес установки, кг',              '1050'],
+  ['Потребляемая мощность, кВт',     '2,2'],
+  ['Установка',                      'В помещении (+0…+45 °C)'],
+  ['Управление',                     'Блок с ключом на выносной штанге'],
 ];
 
 const options = [
   'Удлинитель задней части платформы — 834 мм',
-  'Ширина платформы/подъёмника — 2200/2655 мм',
-  'Ширина платформы/подъёмника — 2300/2755 мм',
-  'Управление подъёмником с брелока',
-  'Дополнительный кодовый замок / чип-карта',
-  'Установка блока управления на бетонную колонну/стену',
+  'Ширина платформы/подъёмника 2200/2655 мм или 2300/2755 мм',
+  'Управление с брелока',
+  'Кодовый замок / чип-карта',
+  'Блок управления на бетонную колонну/стену',
   'Уличное исполнение (−30…+40 °C)',
   'Алюминиевый бак под гидравлическое масло',
-  'Кожухи от пыли, влаги и снега для узлов',
+  'Кожухи от пыли, влаги и снега',
   'Дополнительная антикоррозийная покраска ламелей',
-  'Магнитные концевые выключатели в крайних точках',
+  'Магнитные концевые выключатели',
   'Гидравлическое масло HVLP для перепадов температур',
 ];
 
-const Index = () => {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-primary text-primary-foreground">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-accent">
-              <Icon name="ParkingSquare" size={22} className="text-accent-foreground" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-xl font-600 uppercase tracking-wide">ИТЦ Сибири</div>
-              <div className="text-[11px] uppercase tracking-widest text-primary-foreground/60">Парковочные системы</div>
-            </div>
-          </div>
-          <div className="hidden items-center gap-2 md:flex">
-            <Icon name="Phone" size={18} className="text-accent" />
-            <span className="font-display text-lg font-500">8 (800) 511-06-55</span>
-          </div>
-        </div>
-      </header>
+/* ─── helpers ────────────────────────────────────────────── */
+const SectionLabel = ({ children }: { children: string }) => (
+  <p style={{ color: ORANGE }} className="text-[10px] font-semibold uppercase tracking-[0.18em] mb-1">
+    {children}
+  </p>
+);
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground grid-texture">
-        <div className="container grid gap-10 py-16 md:grid-cols-2 md:items-center md:py-24">
-          <div className="animate-fade-in">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/10 px-4 py-1.5 text-xs uppercase tracking-widest text-accent">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Коммерческое предложение · ИТЦ Сибири
-            </div>
-            <h1 className="font-display text-5xl font-700 uppercase leading-none md:text-7xl">
-              Подъёмник<br />
-              <span className="text-accent">TP-270H</span>
-            </h1>
-            <p className="mt-6 max-w-md text-lg text-primary-foreground/70">
-              Одноцилиндровый двухстоечный гидравлический парковочный подъёмник. Два автомобиля — одно машиноместо.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Icon name="FileText" size={18} className="mr-2" /> Запросить расчёт
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10">
-                <Icon name="Phone" size={18} className="mr-2" /> Связаться
-              </Button>
-            </div>
-          </div>
-          <div className="animate-scale-in">
-            <div className="overflow-hidden rounded-xl border border-primary-foreground/10 shadow-2xl">
-              <img src={IMG_HERO} alt="Парковочный подъёмник TP-270H с двумя автомобилями" className="h-full w-full object-cover" />
-            </div>
-          </div>
+const H2 = ({ children, white }: { children: string; white?: boolean }) => (
+  <h2
+    className="font-display text-2xl font-bold uppercase leading-tight"
+    style={{ color: white ? 'hsl(210,40%,98%)' : NAVY }}
+  >
+    {children}
+  </h2>
+);
+
+/* ─── страница 1: обложка ────────────────────────────────── */
+const Page1 = () => (
+  <div className="brochure-page flex flex-col" style={{ background: NAVY }}>
+    {/* шапка */}
+    <div className="flex items-center justify-between px-10 pt-10 pb-6">
+      <div className="flex items-center gap-3">
+        <div className="flex h-9 w-9 items-center justify-center rounded" style={{ background: ORANGE }}>
+          <Icon name="ParkingSquare" size={20} className="text-white" />
+        </div>
+        <div>
+          <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
+          <div className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>Парковочные системы</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-2">
+        <Icon name="Phone" size={14} style={{ color: ORANGE }} />
+        <span className="font-display text-sm font-semibold text-white">8 (800) 511-06-55</span>
+      </div>
+    </div>
+
+    {/* hero контент */}
+    <div className="grid grid-cols-2 gap-6 flex-1 px-10 pb-6">
+      <div className="flex flex-col justify-center">
+        {/* бейдж */}
+        <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-5 w-fit"
+          style={{ borderColor: `${ORANGE}50`, background: `${ORANGE}18`, color: ORANGE }}>
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
+          <span className="text-[9px] uppercase tracking-widest font-semibold">Коммерческое предложение</span>
         </div>
 
-        {/* Stats bar */}
-        <div className="border-t border-primary-foreground/10 bg-primary/60">
-          <div className="container grid grid-cols-2 divide-x divide-primary-foreground/10 md:grid-cols-4">
-            {heroStats.map((s) => (
-              <div key={s.label} className="px-4 py-6 text-center">
-                <div className="font-display text-3xl font-700 text-accent md:text-4xl">
-                  {s.value} <span className="text-base font-400 text-primary-foreground/60">{s.unit}</span>
-                </div>
-                <div className="mt-1 text-xs uppercase tracking-widest text-primary-foreground/60">{s.label}</div>
+        <h1 className="font-display font-bold uppercase leading-none" style={{ color: 'white', fontSize: '52px' }}>
+          Подъёмник<br />
+          <span style={{ color: ORANGE }}>TP-270H</span>
+        </h1>
+
+        <p className="mt-4 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '260px' }}>
+          Одноцилиндровый двухстоечный гидравлический парковочный подъёмник. Два автомобиля — одно машиноместо.
+        </p>
+
+        {/* статы */}
+        <div className="mt-6 grid grid-cols-2 gap-3">
+          {heroStats.map(s => (
+            <div key={s.label} className="rounded-lg px-3 py-2"
+              style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="font-display font-bold leading-none" style={{ color: ORANGE, fontSize: '22px' }}>
+                {s.value} <span className="text-xs font-normal" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.unit}</span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Description */}
-      <section className="container py-20">
-        <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
-          <div>
-            <div className="text-sm uppercase tracking-widest text-accent">О продукте</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase leading-tight">Инженерное решение нового поколения</h2>
-          </div>
-          <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              <span className="font-500 text-foreground">TP-270H</span> разработан на основе стандартного двухцилиндрового подъёмника TP-270. Вместо двух цилиндров инженеры сконструировали <span className="font-500 text-foreground">один цилиндр</span> — это упрощает установку, повышает скорость парковки и снижает затраты на оборудование и обслуживание.
-            </p>
-            <p>
-              Несмотря на облегчённую конструкцию, подъёмник сохраняет грузоподъёмность <span className="font-500 text-foreground">2,7 тонны</span> и регулируемую высоту подъёма до <span className="font-500 text-foreground">2,1 метра</span>. Требуемая высота помещения: седан/джип — от 3,5 м, внедорожник — от 4,0 м.
-            </p>
-            <p>
-              Модель <span className="font-500 text-foreground">TP-230H</span> отличается только меньшей грузоподъёмностью — 2,3 тонны. Поставку и монтаж выполняет <span className="font-500 text-foreground">ИТЦ Сибири</span>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="bg-primary py-20 text-primary-foreground">
-        <div className="container">
-          <div className="mb-10">
-            <div className="text-sm uppercase tracking-widest text-accent">Наши установки</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Оборудование в эксплуатации</h2>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="group overflow-hidden rounded-xl border border-primary-foreground/10">
-              <img src={IMG_GARAGE} alt="Ряд подъёмников в подземном паркинге" className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-96" />
-            </div>
-            <div className="group overflow-hidden rounded-xl border border-primary-foreground/10">
-              <img src={IMG_HERO} alt="Два автомобиля на подъёмнике TP-270H" className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-96" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Advantages */}
-      <section className="bg-secondary/50 py-20">
-        <div className="container">
-          <div className="mb-12 text-center">
-            <div className="text-sm uppercase tracking-widest text-accent">Преимущества</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Почему выбирают TP-270H</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {advantages.map((a) => (
-              <div key={a.title} className="group rounded-xl border border-border bg-card p-7 transition-all hover:border-accent hover:shadow-lg">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-primary transition-colors group-hover:bg-accent">
-                  <Icon name={a.icon} size={24} className="text-primary-foreground" />
-                </div>
-                <h3 className="font-display text-xl font-600 uppercase">{a.title}</h3>
-                <p className="mt-3 text-muted-foreground">{a.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features list */}
-      <section className="container py-20">
-        <div className="mb-10">
-          <div className="text-sm uppercase tracking-widest text-accent">Особенности</div>
-          <h2 className="mt-3 font-display text-4xl font-600 uppercase">Что входит в конструкцию</h2>
-        </div>
-        <div className="grid gap-x-10 gap-y-4 md:grid-cols-2">
-          {features.map((f) => (
-            <div key={f} className="flex items-start gap-3 border-b border-border pb-4">
-              <Icon name="CheckCircle2" size={20} className="mt-0.5 shrink-0 text-accent" />
-              <span className="text-foreground">{f}</span>
+              <div className="text-[9px] uppercase tracking-wider mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>{s.label}</div>
             </div>
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* Drawing */}
-      <section className="bg-secondary/50 py-20">
-        <div className="container">
-          <div className="mb-10">
-            <div className="text-sm uppercase tracking-widest text-accent">Чертёж</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Габаритные размеры</h2>
-          </div>
-          <div className="overflow-hidden rounded-xl border border-border bg-white p-4 shadow-sm md:p-8">
-            <img src={IMG_DRAWING} alt="Чертёж подъёмника TP-270H с размерами" className="mx-auto w-full max-w-4xl" />
-          </div>
+      <div className="flex items-center">
+        <div className="overflow-hidden rounded-xl w-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
+          <img src={IMG_HERO} alt="TP-270H" className="w-full object-cover" style={{ height: '340px' }} />
         </div>
-      </section>
-
-      {/* Specs + Options */}
-      <section className="bg-primary py-20 text-primary-foreground">
-        <div className="container grid gap-12 lg:grid-cols-2">
-          <div>
-            <div className="text-sm uppercase tracking-widest text-accent">Спецификация</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Технические характеристики</h2>
-            <div className="mt-8 overflow-hidden rounded-xl border border-primary-foreground/10">
-              {specs.map(([k, v], i) => (
-                <div key={k} className={`grid grid-cols-2 gap-4 px-5 py-3.5 text-sm ${i % 2 === 0 ? 'bg-primary-foreground/5' : ''}`}>
-                  <span className="text-primary-foreground/60">{k}</span>
-                  <span className="text-right font-500">{v}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="text-sm uppercase tracking-widest text-accent">Опции</div>
-            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Дополнительная комплектация</h2>
-            <p className="mt-2 text-sm text-primary-foreground/50">Отдельная стоимость. Уточняйте у специалистов ИТЦ Сибири.</p>
-            <div className="mt-8 space-y-3">
-              {options.map((o) => (
-                <div key={o} className="flex items-start gap-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 px-4 py-3">
-                  <Icon name="Plus" size={18} className="mt-0.5 shrink-0 text-accent" />
-                  <span className="text-sm">{o}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="container py-20">
-        <div className="overflow-hidden rounded-2xl border border-border bg-card">
-          <div className="grid gap-8 p-8 md:grid-cols-2 md:p-12">
-            <div>
-              <h2 className="font-display text-4xl font-600 uppercase leading-tight">Готовы обсудить проект?</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                ИТЦ Сибири рассчитает комплектацию под ваше помещение, подберёт количество подъёмников и подготовит коммерческое предложение.
-              </p>
-              <div className="mt-8 space-y-4">
-                <a href="tel:88005110655" className="flex items-center gap-4 group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent"><Icon name="Phone" size={20} className="text-accent-foreground" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">Телефон</div>
-                    <div className="font-display text-xl font-500 group-hover:text-accent">8 (800) 511-06-55</div>
-                  </div>
-                </a>
-                <a href="mailto:info@itc-sibiri.ru" className="flex items-center gap-4 group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent"><Icon name="Mail" size={20} className="text-accent-foreground" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-                    <div className="font-display text-xl font-500 group-hover:text-accent">info@itc-sibiri.ru</div>
-                  </div>
-                </a>
-                <a href="https://itc-sibiri.ru" className="flex items-center gap-4 group">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent"><Icon name="Globe" size={20} className="text-accent-foreground" /></div>
-                  <div>
-                    <div className="text-xs uppercase tracking-widest text-muted-foreground">Сайт</div>
-                    <div className="font-display text-xl font-500 group-hover:text-accent">itc-sibiri.ru</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center rounded-xl bg-primary p-8 text-primary-foreground">
-              <Icon name="Headset" size={40} className="text-accent" />
-              <h3 className="mt-5 font-display text-2xl font-600 uppercase">Индивидуальный расчёт</h3>
-              <p className="mt-3 text-primary-foreground/70">Оставьте заявку — специалист ИТЦ Сибири свяжется с вами и подготовит предложение под ваши задачи.</p>
-              <Button size="lg" className="mt-6 w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                <Icon name="Send" size={18} className="mr-2" /> Оставить заявку
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-primary py-10 text-primary-foreground">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded bg-accent">
-              <Icon name="ParkingSquare" size={20} className="text-accent-foreground" />
-            </div>
-            <span className="font-display text-lg font-600 uppercase tracking-wide">ИТЦ Сибири</span>
-          </div>
-          <div className="text-sm text-primary-foreground/50">
-            Производитель оставляет за собой право вносить незначительные изменения. Расхождение габаритов ±50 мм.
-          </div>
-        </div>
-      </footer>
+      </div>
     </div>
+
+    {/* полоса низа */}
+    <div className="px-10 py-4 flex items-center justify-between"
+      style={{ background: 'rgba(255,255,255,0.05)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+      <span className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
+        Производитель: SolidParking, КНР
+      </span>
+      <span className="font-display text-sm font-bold" style={{ color: ORANGE }}>itc-sibiri.ru</span>
+      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>1 / 4</span>
+    </div>
+  </div>
+);
+
+/* ─── страница 2: описание + галерея ─────────────────────── */
+const Page2 = () => (
+  <div className="brochure-page flex flex-col" style={{ background: LIGHT_BG }}>
+    {/* верхний акцент */}
+    <div className="h-1.5 w-full" style={{ background: ORANGE }} />
+
+    <div className="flex-1 px-10 py-8 flex flex-col gap-7">
+      {/* описание */}
+      <div className="grid grid-cols-[1fr_1.4fr] gap-8 items-start">
+        <div>
+          <SectionLabel>О продукте</SectionLabel>
+          <H2>Инженерное решение нового поколения</H2>
+        </div>
+        <div className="text-sm leading-relaxed" style={{ color: 'hsl(215,16%,42%)' }}>
+          <p className="mb-3">
+            <strong style={{ color: NAVY }}>TP-270H</strong> разработан на основе стандартного TP-270. Вместо двух цилиндров —{' '}
+            <strong style={{ color: NAVY }}>один</strong>: упрощён монтаж, выше скорость парковки, ниже затраты на обслуживание.
+          </p>
+          <p className="mb-3">
+            Грузоподъёмность <strong style={{ color: NAVY }}>2,7 тонны</strong>, высота подъёма до{' '}
+            <strong style={{ color: NAVY }}>2,1 м</strong>. Высота помещения: от 3,5 м (седан), от 4,0 м (внедорожник).
+          </p>
+          <p>
+            Поставку и монтаж выполняет <strong style={{ color: NAVY }}>ИТЦ Сибири</strong>.
+          </p>
+        </div>
+      </div>
+
+      {/* галерея */}
+      <div>
+        <SectionLabel>Наши установки</SectionLabel>
+        <H2>Оборудование в эксплуатации</H2>
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="overflow-hidden rounded-xl" style={{ border: '1px solid hsl(214,32%,88%)' }}>
+            <img src={IMG_GARAGE} alt="Подъёмники в паркинге" className="w-full object-cover" style={{ height: '190px' }} />
+          </div>
+          <div className="overflow-hidden rounded-xl" style={{ border: '1px solid hsl(214,32%,88%)' }}>
+            <img src={IMG_HERO} alt="TP-270H с двумя авто" className="w-full object-cover" style={{ height: '190px' }} />
+          </div>
+        </div>
+      </div>
+
+      {/* фичи */}
+      <div>
+        <SectionLabel>Особенности</SectionLabel>
+        <H2>Что входит в конструкцию</H2>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-2 mt-4">
+          {features.map(f => (
+            <div key={f} className="flex items-start gap-2 border-b pb-2" style={{ borderColor: 'hsl(214,32%,88%)' }}>
+              <Icon name="CheckCircle2" size={14} className="mt-0.5 shrink-0" style={{ color: ORANGE }} />
+              <span className="text-[11px] leading-tight" style={{ color: NAVY }}>{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* футер страницы */}
+    <div className="px-10 py-3 flex items-center justify-between"
+      style={{ background: NAVY, borderTop: `3px solid ${ORANGE}` }}>
+      <span className="font-display text-xs font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
+      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>2 / 4</span>
+    </div>
+  </div>
+);
+
+/* ─── страница 3: преимущества + чертёж ─────────────────── */
+const Page3 = () => (
+  <div className="brochure-page flex flex-col" style={{ background: LIGHT_BG }}>
+    <div className="h-1.5 w-full" style={{ background: ORANGE }} />
+
+    <div className="flex-1 px-10 py-8 flex flex-col gap-7">
+      {/* преимущества */}
+      <div>
+        <SectionLabel>Преимущества</SectionLabel>
+        <H2>Почему выбирают TP-270H</H2>
+        <div className="grid grid-cols-3 gap-3 mt-4">
+          {advantages.map(a => (
+            <div key={a.title} className="rounded-xl p-4"
+              style={{ border: '1px solid hsl(214,32%,88%)', background: 'white' }}>
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg mb-3"
+                style={{ background: NAVY }}>
+                <Icon name={a.icon} size={18} className="text-white" />
+              </div>
+              <div className="font-display text-[11px] font-bold uppercase mb-1" style={{ color: NAVY }}>{a.title}</div>
+              <p className="text-[10px] leading-relaxed" style={{ color: 'hsl(215,16%,42%)' }}>{a.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* чертёж */}
+      <div className="flex-1">
+        <SectionLabel>Чертёж</SectionLabel>
+        <H2>Габаритные размеры</H2>
+        <div className="rounded-xl overflow-hidden mt-4 flex items-center justify-center bg-white"
+          style={{ border: '1px solid hsl(214,32%,88%)', padding: '12px' }}>
+          <img src={IMG_DRAWING} alt="Чертёж TP-270H" className="w-full object-contain" style={{ maxHeight: '280px' }} />
+        </div>
+      </div>
+    </div>
+
+    <div className="px-10 py-3 flex items-center justify-between"
+      style={{ background: NAVY, borderTop: `3px solid ${ORANGE}` }}>
+      <span className="font-display text-xs font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
+      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>3 / 4</span>
+    </div>
+  </div>
+);
+
+/* ─── страница 4: хар-ки + опции + контакты ─────────────── */
+const Page4 = () => (
+  <div className="brochure-page flex flex-col" style={{ background: NAVY }}>
+    <div className="h-1.5 w-full" style={{ background: ORANGE }} />
+
+    <div className="flex-1 px-10 py-8 grid grid-cols-2 gap-8">
+      {/* характеристики */}
+      <div>
+        <SectionLabel>Спецификация</SectionLabel>
+        <H2 white>Технические характеристики</H2>
+        <div className="mt-4 rounded-xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+          {specs.map(([k, v], i) => (
+            <div key={k}
+              className="grid grid-cols-2 gap-2 px-3 py-2 text-[10px]"
+              style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.06)' : 'transparent' }}>
+              <span style={{ color: 'rgba(255,255,255,0.55)' }}>{k}</span>
+              <span className="text-right font-semibold text-white">{v}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* опции + контакты */}
+      <div className="flex flex-col gap-6">
+        <div>
+          <SectionLabel>Опции</SectionLabel>
+          <H2 white>Дополнительная комплектация</H2>
+          <p className="text-[9px] mt-0.5 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Стоимость уточняйте у специалистов</p>
+          <div className="space-y-1.5">
+            {options.map(o => (
+              <div key={o} className="flex items-start gap-2 rounded-lg px-3 py-2"
+                style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.04)' }}>
+                <Icon name="Plus" size={12} className="mt-0.5 shrink-0" style={{ color: ORANGE }} />
+                <span className="text-[10px] leading-tight text-white">{o}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* контакты */}
+        <div className="rounded-xl p-5" style={{ background: ORANGE }}>
+          <div className="font-display text-base font-bold uppercase text-white mb-3">Связаться с нами</div>
+          <div className="space-y-2">
+            {[
+              { icon: 'Phone', label: 'Телефон', val: '8 (800) 511-06-55' },
+              { icon: 'Mail',  label: 'Email',   val: 'info@itc-sibiri.ru'  },
+              { icon: 'Globe', label: 'Сайт',    val: 'itc-sibiri.ru'       },
+            ].map(c => (
+              <div key={c.label} className="flex items-center gap-3">
+                <div className="flex h-7 w-7 items-center justify-center rounded-lg"
+                  style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <Icon name={c.icon} size={14} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-[8px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.7)' }}>{c.label}</div>
+                  <div className="font-display text-[13px] font-bold text-white">{c.val}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* подвал обложки */}
+    <div className="px-10 py-4 flex items-center justify-between"
+      style={{ background: 'rgba(0,0,0,0.25)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+      <div className="flex items-center gap-2">
+        <div className="flex h-7 w-7 items-center justify-center rounded" style={{ background: ORANGE }}>
+          <Icon name="ParkingSquare" size={16} className="text-white" />
+        </div>
+        <span className="font-display text-sm font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
+      </div>
+      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>
+        Производитель оставляет за собой право вносить изменения. Расхождение габаритов ±50 мм.
+      </span>
+      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>4 / 4</span>
+    </div>
+  </div>
+);
+
+/* ─── главный компонент ──────────────────────────────────── */
+const Index = () => {
+  const handlePrint = () => window.print();
+
+  return (
+    <>
+      {/* кнопка печати — только на экране */}
+      <div className="no-print sticky top-0 z-50 flex items-center justify-between px-6 py-3"
+        style={{ background: NAVY, borderBottom: `2px solid ${ORANGE}` }}>
+        <div className="flex items-center gap-3">
+          <div className="flex h-8 w-8 items-center justify-center rounded" style={{ background: ORANGE }}>
+            <Icon name="ParkingSquare" size={18} className="text-white" />
+          </div>
+          <span className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
+          <span className="text-[10px] uppercase tracking-widest ml-2" style={{ color: 'rgba(255,255,255,0.5)' }}>
+            Брошюра · TP-270H
+          </span>
+        </div>
+        <button
+          onClick={handlePrint}
+          className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+          style={{ background: ORANGE }}>
+          <Icon name="Printer" size={16} className="text-white" />
+          Распечатать / Сохранить PDF
+        </button>
+      </div>
+
+      {/* обёртка брошюры */}
+      <div className="brochure-wrapper">
+        <Page1 />
+        <Page2 />
+        <Page3 />
+        <Page4 />
+      </div>
+    </>
   );
 };
 

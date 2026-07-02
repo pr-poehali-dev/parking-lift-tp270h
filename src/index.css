@@ -106,3 +106,56 @@
     linear-gradient(90deg, hsl(215 55% 18% / 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* ===== БРОШЮРА: A4 страницы ===== */
+.brochure-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: white;
+  position: relative;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  page-break-after: always;
+  break-after: page;
+  overflow: hidden;
+}
+
+.brochure-wrapper {
+  background: hsl(214, 32%, 88%);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.no-print {
+  display: block;
+}
+
+@media print {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .brochure-wrapper {
+    padding: 0;
+    gap: 0;
+    background: white;
+  }
+
+  .brochure-page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    box-shadow: none;
+    margin: 0;
+    overflow: hidden;
+  }
+}
