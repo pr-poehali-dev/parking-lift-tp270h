@@ -90,60 +90,56 @@ const H2 = ({ children, white }: { children: string; white?: boolean }) => (
 /* ─── страница 1: обложка ────────────────────────────────── */
 const Page1 = () => (
   <div className="brochure-page flex flex-col" style={{ background: NAVY }}>
-
-    {/* картинка — на всю ширину, вверху */}
-    <div className="relative w-full" style={{ flex: '1 1 0', minHeight: 0 }}>
-      <img
-        src={IMG_HERO}
-        alt="TP-270H"
-        className="w-full h-full object-cover object-center"
-        style={{ display: 'block' }}
-      />
-      {/* тёмный градиент снизу картинки — для читаемости текста */}
-      <div className="absolute inset-0" style={{
-        background: 'linear-gradient(to bottom, rgba(16,35,65,0.15) 0%, rgba(16,35,65,0.85) 100%)'
-      }} />
-
-      {/* шапка поверх картинки */}
-      <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-10 pt-8">
-        <div className="flex items-center gap-3">
-          <img
-            src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
-            alt="ИТЦ Сибири"
-            style={{ height: '52px', width: '52px', objectFit: 'contain', mixBlendMode: 'screen' }}
-          />
+    {/* шапка */}
+    <div className="flex items-center justify-between px-10 pt-10 pb-6">
+      <div className="flex items-center gap-3">
+        <img
+          src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
+          alt="ИТЦ Сибири"
+          style={{ height: '48px', width: '48px', objectFit: 'contain', mixBlendMode: 'screen' }}
+        />
+        <div>
           <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
         </div>
-        <div className="flex items-center gap-2">
-          <Icon name="Phone" size={14} style={{ color: ORANGE }} />
-          <span className="font-display text-sm font-semibold text-white">8-905-975-58-88</span>
-        </div>
       </div>
+      <div className="flex items-center gap-2">
+        <Icon name="Phone" size={14} style={{ color: ORANGE }} />
+        <span className="font-display text-sm font-semibold text-white">8-905-975-58-88</span>
+      </div>
+    </div>
 
-      {/* текстовый блок — внизу картинки */}
-      <div className="absolute bottom-0 left-0 right-0 px-10 pb-8">
+    {/* hero контент */}
+    <div className="grid grid-cols-2 gap-6 flex-1 px-10 pb-6">
+      <div className="flex flex-col justify-center">
         {/* бейдж */}
-        <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4 w-fit"
-          style={{ borderColor: `${ORANGE}70`, background: `${ORANGE}25`, color: ORANGE }}>
+        <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-5 w-fit"
+          style={{ borderColor: `${ORANGE}50`, background: `${ORANGE}18`, color: ORANGE }}>
           <span className="h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
           <span className="text-[9px] uppercase tracking-widest font-semibold">Коммерческое предложение</span>
         </div>
 
-        <p className="mb-1 text-sm font-semibold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.65)' }}>
-          Парковочные системы
-        </p>
-        <h1 className="font-display font-bold uppercase leading-none" style={{ color: 'white', fontSize: '58px' }}>
+        <p className="mb-2 text-sm font-semibold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.6)' }}>Парковочные системы</p>
+        <h1 className="font-display font-bold uppercase leading-none" style={{ color: 'white', fontSize: '52px' }}>
           Подъёмник<br />
           <span style={{ color: ORANGE }}>TP-270H</span>
         </h1>
-        <p className="mt-3 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)', maxWidth: '320px' }}>
+
+        <p className="mt-4 text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '260px' }}>
           Одноцилиндровый двухстоечный гидравлический парковочный подъёмник. Два автомобиля — одно машиноместо.
         </p>
+
+
+      </div>
+
+      <div className="flex items-center">
+        <div className="overflow-hidden rounded-xl w-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
+          <img src={IMG_HERO} alt="TP-270H" className="w-full object-contain" />
+        </div>
       </div>
     </div>
 
     {/* полоса низа */}
-    <div className="px-10 py-4 flex items-center justify-between flex-shrink-0"
+    <div className="px-10 py-4 flex items-center justify-between"
       style={{ background: 'rgba(255,255,255,0.05)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
       <span className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
         Производитель: SolidParking, КНР
