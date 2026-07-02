@@ -104,7 +104,7 @@ const Page1 = () => (
     </div>
 
     {/* распорка сверху — картинка чуть выше центра */}
-    <div style={{ flex: '1' }} />
+    <div style={{ flex: '0.4' }} />
 
     {/* картинка */}
     <div className="px-10 flex-shrink-0">
