@@ -93,9 +93,11 @@ const Page1 = () => (
     {/* шапка */}
     <div className="flex items-center justify-between px-10 pt-10 pb-6">
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded" style={{ background: ORANGE }}>
-          <Icon name="ParkingSquare" size={20} className="text-white" />
-        </div>
+        <img
+          src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
+          alt="ИТЦ Сибири"
+          style={{ height: '48px', width: '48px', objectFit: 'contain', mixBlendMode: 'screen' }}
+        />
         <div>
           <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
         </div>
@@ -326,9 +328,11 @@ const Page4 = () => (
     <div className="px-10 py-4 flex items-center justify-between"
       style={{ background: 'rgba(0,0,0,0.25)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
       <div className="flex items-center gap-2">
-        <div className="flex h-7 w-7 items-center justify-center rounded" style={{ background: ORANGE }}>
-          <Icon name="ParkingSquare" size={16} className="text-white" />
-        </div>
+        <img
+          src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
+          alt="ИТЦ Сибири"
+          style={{ height: '36px', width: '36px', objectFit: 'contain', mixBlendMode: 'screen' }}
+        />
         <span className="font-display text-sm font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
       </div>
       <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>
