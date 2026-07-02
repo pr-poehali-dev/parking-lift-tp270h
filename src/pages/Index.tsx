@@ -41,7 +41,6 @@ const features = [
 ];
 
 const specs = [
-  ['Производитель, марка',           'КНР, TP-270H'],
   ['Вид привода',                    'Гидравлический (1 цилиндр)'],
   ['Грузоподъёмность, кг',           '≤ 2700'],
   ['Высота подъёма платформы, мм',   '2100'],
@@ -281,6 +280,20 @@ const Page4 = () => (
 
       {/* опции + контакты */}
       <div className="flex flex-col gap-6">
+
+        {/* стоимость */}
+        <div className="rounded-xl p-5 flex items-center gap-4" style={{ background: ORANGE }}>
+          <div>
+            <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
+            <div className="font-display text-3xl font-bold text-white leading-none">от 450 000 ₽</div>
+            <div className="text-[11px] text-white opacity-75 mt-1">с учётом НДС</div>
+          </div>
+          <div className="ml-auto flex h-12 w-12 items-center justify-center rounded-xl flex-shrink-0"
+            style={{ background: 'rgba(255,255,255,0.2)' }}>
+            <Icon name="Tag" size={24} className="text-white" />
+          </div>
+        </div>
+
         <div>
           <SectionLabel>Опции</SectionLabel>
           <H2 white>Дополнительная комплектация</H2>
