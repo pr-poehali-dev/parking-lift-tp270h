@@ -103,7 +103,10 @@ const Page1 = () => (
       </div>
     </div>
 
-    {/* картинка — зафиксирована под шапкой */}
+    {/* распорка сверху — картинка чуть выше центра */}
+    <div style={{ flex: '1' }} />
+
+    {/* картинка */}
     <div className="px-10 flex-shrink-0">
       <div className="overflow-hidden rounded-xl w-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)', height: '340px' }}>
         <img src={IMG_HERO} alt="TP-270H" className="w-full h-full object-cover object-center" style={{ display: 'block' }} />
