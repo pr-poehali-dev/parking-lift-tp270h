@@ -231,8 +231,8 @@ const Page3 = () => (
                 style={{ background: NAVY }}>
                 <Icon name={a.icon} size={18} className="text-white" />
               </div>
-              <div className="font-display text-[11px] font-bold uppercase mb-1" style={{ color: NAVY }}>{a.title}</div>
-              <p className="text-[10px] leading-relaxed" style={{ color: 'hsl(215,16%,42%)' }}>{a.text}</p>
+              <div className="font-display text-[12px] font-bold uppercase mb-1" style={{ color: NAVY }}>{a.title}</div>
+              <p className="text-[11px] leading-relaxed" style={{ color: 'hsl(215,16%,42%)' }}>{a.text}</p>
             </div>
           ))}
         </div>
@@ -244,7 +244,7 @@ const Page3 = () => (
         <H2>Габаритные размеры</H2>
         <div className="rounded-xl overflow-hidden mt-4 flex items-center justify-center bg-white"
           style={{ border: '1px solid hsl(214,32%,88%)', padding: '12px' }}>
-          <img src={IMG_DRAWING} alt="Чертёж TP-270H" className="w-full object-contain" style={{ maxHeight: '280px' }} />
+          <img src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/b01dd942-992f-4d4f-aeb2-8d989dc06dc7.jpg" alt="Чертёж TP-270H" className="w-full object-contain" style={{ maxHeight: '340px' }} />
         </div>
       </div>
     </div>
