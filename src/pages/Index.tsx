@@ -181,10 +181,10 @@ const Page2 = () => (
         <H2>Оборудование в эксплуатации</H2>
         <div className="grid grid-cols-2 gap-4 mt-4">
           <div className="overflow-hidden rounded-xl" style={{ border: '1px solid hsl(214,32%,88%)' }}>
-            <img src={IMG_GARAGE} alt="Подъёмники в паркинге" className="w-full object-cover" style={{ height: '190px' }} />
+            <img src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/d5144d73-c0a4-4be8-95a7-7ef4d7c64215.jpg" alt="Подъёмники в паркинге" className="w-full object-cover" style={{ height: '190px' }} />
           </div>
           <div className="overflow-hidden rounded-xl" style={{ border: '1px solid hsl(214,32%,88%)' }}>
-            <img src={IMG_HERO} alt="TP-270H с двумя авто" className="w-full object-cover" style={{ height: '190px' }} />
+            <img src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/111b17da-538f-45c7-88bd-9ee1585faa46.jpg" alt="TP-270H в эксплуатации" className="w-full object-cover" style={{ height: '190px' }} />
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ const Page2 = () => (
           {features.map(f => (
             <div key={f} className="flex items-start gap-2 border-b pb-2" style={{ borderColor: 'hsl(214,32%,88%)' }}>
               <Icon name="CheckCircle2" size={14} className="mt-0.5 shrink-0" style={{ color: ORANGE }} />
-              <span className="text-[11px] leading-tight" style={{ color: NAVY }}>{f}</span>
+              <span className="text-[13px] leading-snug" style={{ color: NAVY }}>{f}</span>
             </div>
           ))}
         </div>
