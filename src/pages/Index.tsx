@@ -279,11 +279,8 @@ const Page4 = () => (
           </div>
         </div>
 
-        {/* распорка — прижимает блок стоимости к низу */}
-        <div className="flex-1" />
-
-        {/* стоимость — выровнена по низу с блоком контактов */}
-        <div className="rounded-xl p-5 flex items-center gap-4" style={{ background: ORANGE }}>
+        {/* стоимость */}
+        <div className="rounded-xl p-5 flex items-center gap-4 mt-5" style={{ background: ORANGE }}>
           <div>
             <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
             <div className="font-display text-3xl font-bold text-white leading-none">от 450 000 ₽</div>
@@ -298,7 +295,7 @@ const Page4 = () => (
 
       {/* правая колонка: опции + контакты */}
       <div className="flex flex-col">
-        <div className="flex-1">
+        <div>
           <SectionLabel>Опции</SectionLabel>
           <H2 white>Дополнительная комплектация</H2>
           <p className="text-[9px] mt-0.5 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Стоимость уточняйте у специалистов</p>
