@@ -97,7 +97,7 @@ const Page1 = () => (
         <img
           src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
           alt="ИТЦ Сибири"
-          style={{ height: '48px', width: '48px', objectFit: 'contain', mixBlendMode: 'screen' }}
+          style={{ height: '48px', width: '48px', objectFit: 'contain', mixBlendMode: 'screen', borderRadius: '12px' }}
         />
         <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
       </div>
