@@ -1,7 +1,9 @@
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 
-const HERO_IMG = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/files/011b664b-4745-457d-9ed5-e81e620e21f5.jpg';
+const IMG_HERO = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/6b78e395-3714-4ed5-be53-9db9f06a2aa4.jpg';
+const IMG_GARAGE = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/ac079f35-94b2-44fe-92af-69ef7d9c41ad.jpg';
+const IMG_DRAWING = 'https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/47776086-c453-4bb6-96ce-3f3398af581c.jpg';
 
 const heroStats = [
   { value: '2 700', unit: 'кг', label: 'Грузоподъёмность' },
@@ -77,7 +79,7 @@ const Index = () => {
               <Icon name="ParkingSquare" size={22} className="text-accent-foreground" />
             </div>
             <div className="leading-tight">
-              <div className="font-display text-xl font-600 uppercase tracking-wide">MehParking</div>
+              <div className="font-display text-xl font-600 uppercase tracking-wide">ИТЦ Сибири</div>
               <div className="text-[11px] uppercase tracking-widest text-primary-foreground/60">Парковочные системы</div>
             </div>
           </div>
@@ -94,14 +96,14 @@ const Index = () => {
           <div className="animate-fade-in">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-accent/50 bg-accent/10 px-4 py-1.5 text-xs uppercase tracking-widest text-accent">
               <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-              Коммерческое предложение
+              Коммерческое предложение · ИТЦ Сибири
             </div>
             <h1 className="font-display text-5xl font-700 uppercase leading-none md:text-7xl">
               Подъёмник<br />
               <span className="text-accent">TP-270H</span>
             </h1>
             <p className="mt-6 max-w-md text-lg text-primary-foreground/70">
-              Одноцилиндровый двухстоечный гидравлический парковочный подъёмник от SolidParking (КНР). Два автомобиля — одно машиноместо.
+              Одноцилиндровый двухстоечный гидравлический парковочный подъёмник. Два автомобиля — одно машиноместо.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -114,7 +116,7 @@ const Index = () => {
           </div>
           <div className="animate-scale-in">
             <div className="overflow-hidden rounded-xl border border-primary-foreground/10 shadow-2xl">
-              <img src={HERO_IMG} alt="Парковочный подъёмник TP-270H" className="h-full w-full object-cover" />
+              <img src={IMG_HERO} alt="Парковочный подъёмник TP-270H с двумя автомобилями" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
@@ -143,14 +145,32 @@ const Index = () => {
           </div>
           <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
-              <span className="font-500 text-foreground">TP-270H</span> разработан на основе стандартного двухцилиндрового подъёмника TP-270. Вместо двух цилиндров инженеры завода сконструировали <span className="font-500 text-foreground">один цилиндр</span> — это упрощает установку, повышает скорость парковки и снижает затраты на оборудование и обслуживание.
+              <span className="font-500 text-foreground">TP-270H</span> разработан на основе стандартного двухцилиндрового подъёмника TP-270. Вместо двух цилиндров инженеры сконструировали <span className="font-500 text-foreground">один цилиндр</span> — это упрощает установку, повышает скорость парковки и снижает затраты на оборудование и обслуживание.
             </p>
             <p>
-              Несмотря на облегчённую конструкцию, подъёмник сохраняет грузоподъёмность <span className="font-500 text-foreground">2,7 тонны</span> и регулируемую высоту подъёма до <span className="font-500 text-foreground">2,1 метра</span>. Требуемая высота помещения: седан/джип — от 3,5 м, внедорожник/внедорожник — от 4,0 м.
+              Несмотря на облегчённую конструкцию, подъёмник сохраняет грузоподъёмность <span className="font-500 text-foreground">2,7 тонны</span> и регулируемую высоту подъёма до <span className="font-500 text-foreground">2,1 метра</span>. Требуемая высота помещения: седан/джип — от 3,5 м, внедорожник — от 4,0 м.
             </p>
             <p>
-              Модель <span className="font-500 text-foreground">TP-230H</span> отличается только меньшей грузоподъёмностью — 2,3 тонны.
+              Модель <span className="font-500 text-foreground">TP-230H</span> отличается только меньшей грузоподъёмностью — 2,3 тонны. Поставку и монтаж выполняет <span className="font-500 text-foreground">ИТЦ Сибири</span>.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="bg-primary py-20 text-primary-foreground">
+        <div className="container">
+          <div className="mb-10">
+            <div className="text-sm uppercase tracking-widest text-accent">Наши установки</div>
+            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Оборудование в эксплуатации</h2>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="group overflow-hidden rounded-xl border border-primary-foreground/10">
+              <img src={IMG_GARAGE} alt="Ряд подъёмников в подземном паркинге" className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-96" />
+            </div>
+            <div className="group overflow-hidden rounded-xl border border-primary-foreground/10">
+              <img src={IMG_HERO} alt="Два автомобиля на подъёмнике TP-270H" className="h-72 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-96" />
+            </div>
           </div>
         </div>
       </section>
@@ -192,6 +212,19 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Drawing */}
+      <section className="bg-secondary/50 py-20">
+        <div className="container">
+          <div className="mb-10">
+            <div className="text-sm uppercase tracking-widest text-accent">Чертёж</div>
+            <h2 className="mt-3 font-display text-4xl font-600 uppercase">Габаритные размеры</h2>
+          </div>
+          <div className="overflow-hidden rounded-xl border border-border bg-white p-4 shadow-sm md:p-8">
+            <img src={IMG_DRAWING} alt="Чертёж подъёмника TP-270H с размерами" className="mx-auto w-full max-w-4xl" />
+          </div>
+        </div>
+      </section>
+
       {/* Specs + Options */}
       <section className="bg-primary py-20 text-primary-foreground">
         <div className="container grid gap-12 lg:grid-cols-2">
@@ -210,7 +243,7 @@ const Index = () => {
           <div>
             <div className="text-sm uppercase tracking-widest text-accent">Опции</div>
             <h2 className="mt-3 font-display text-4xl font-600 uppercase">Дополнительная комплектация</h2>
-            <p className="mt-2 text-sm text-primary-foreground/50">Отдельная стоимость. Уточняйте у менеджера.</p>
+            <p className="mt-2 text-sm text-primary-foreground/50">Отдельная стоимость. Уточняйте у специалистов ИТЦ Сибири.</p>
             <div className="mt-8 space-y-3">
               {options.map((o) => (
                 <div key={o} className="flex items-start gap-3 rounded-lg border border-primary-foreground/10 bg-primary-foreground/5 px-4 py-3">
@@ -230,7 +263,7 @@ const Index = () => {
             <div>
               <h2 className="font-display text-4xl font-600 uppercase leading-tight">Готовы обсудить проект?</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Рассчитаем комплектацию под ваше помещение, подберём количество подъёмников и подготовим коммерческое предложение.
+                ИТЦ Сибири рассчитает комплектацию под ваше помещение, подберёт количество подъёмников и подготовит коммерческое предложение.
               </p>
               <div className="mt-8 space-y-4">
                 <a href="tel:88005110655" className="flex items-center gap-4 group">
@@ -240,18 +273,18 @@ const Index = () => {
                     <div className="font-display text-xl font-500 group-hover:text-accent">8 (800) 511-06-55</div>
                   </div>
                 </a>
-                <a href="mailto:info@mehparking.ru" className="flex items-center gap-4 group">
+                <a href="mailto:info@itc-sibiri.ru" className="flex items-center gap-4 group">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent"><Icon name="Mail" size={20} className="text-accent-foreground" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-muted-foreground">Email</div>
-                    <div className="font-display text-xl font-500 group-hover:text-accent">info@mehparking.ru</div>
+                    <div className="font-display text-xl font-500 group-hover:text-accent">info@itc-sibiri.ru</div>
                   </div>
                 </a>
-                <a href="https://www.mehparking.ru" className="flex items-center gap-4 group">
+                <a href="https://itc-sibiri.ru" className="flex items-center gap-4 group">
                   <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent"><Icon name="Globe" size={20} className="text-accent-foreground" /></div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-muted-foreground">Сайт</div>
-                    <div className="font-display text-xl font-500 group-hover:text-accent">www.mehparking.ru</div>
+                    <div className="font-display text-xl font-500 group-hover:text-accent">itc-sibiri.ru</div>
                   </div>
                 </a>
               </div>
@@ -259,7 +292,7 @@ const Index = () => {
             <div className="flex flex-col justify-center rounded-xl bg-primary p-8 text-primary-foreground">
               <Icon name="Headset" size={40} className="text-accent" />
               <h3 className="mt-5 font-display text-2xl font-600 uppercase">Индивидуальный расчёт</h3>
-              <p className="mt-3 text-primary-foreground/70">Оставьте заявку — специалист свяжется с вами и подготовит предложение под ваши задачи.</p>
+              <p className="mt-3 text-primary-foreground/70">Оставьте заявку — специалист ИТЦ Сибири свяжется с вами и подготовит предложение под ваши задачи.</p>
               <Button size="lg" className="mt-6 w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 <Icon name="Send" size={18} className="mr-2" /> Оставить заявку
               </Button>
@@ -275,7 +308,7 @@ const Index = () => {
             <div className="flex h-9 w-9 items-center justify-center rounded bg-accent">
               <Icon name="ParkingSquare" size={20} className="text-accent-foreground" />
             </div>
-            <span className="font-display text-lg font-600 uppercase tracking-wide">MehParking</span>
+            <span className="font-display text-lg font-600 uppercase tracking-wide">ИТЦ Сибири</span>
           </div>
           <div className="text-sm text-primary-foreground/50">
             Производитель оставляет за собой право вносить незначительные изменения. Расхождение габаритов ±50 мм.
