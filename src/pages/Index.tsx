@@ -92,7 +92,7 @@ const Page1 = () => (
   <div className="brochure-page flex flex-col" style={{ background: NAVY }}>
 
     {/* шапка */}
-    <div className="flex items-center justify-between px-10 pt-4 pb-2 flex-shrink-0">
+    <div className="flex items-center justify-between px-10 pt-10 pb-2 flex-shrink-0">
       <div className="flex items-center gap-3">
         <img
           src="https://cdn.poehali.dev/projects/38be9ffc-e908-478b-8eea-05c38aec9937/bucket/3534ad11-34df-45d6-921d-d25856d512f7.jpg"
