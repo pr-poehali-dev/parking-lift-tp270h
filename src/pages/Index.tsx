@@ -132,6 +132,9 @@ const Page1 = () => (
       </p>
     </div>
 
+    {/* распорка — прижимает полосу к самому низу */}
+    <div style={{ flex: '1' }} />
+
     {/* полоса низа */}
     <div className="px-10 py-3 flex items-center gap-6 flex-shrink-0"
       style={{ background: 'rgba(255,255,255,0.05)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
