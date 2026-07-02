@@ -103,17 +103,20 @@ const Page1 = () => (
       </div>
     </div>
 
-    {/* картинка — фиксированная высота, не двигать */}
-    <div className="px-10 flex-shrink-0" style={{ marginTop: '8px' }}>
+    {/* пространство сверху — смещает картинку к центру */}
+    <div style={{ flex: '1' }} />
+
+    {/* картинка — фиксированная высота */}
+    <div className="px-10 flex-shrink-0">
       <div className="overflow-hidden rounded-xl w-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)', height: '340px' }}>
         <img src={IMG_HERO} alt="TP-270H" className="w-full h-full object-cover object-center" style={{ display: 'block' }} />
       </div>
     </div>
 
-    {/* растягивающийся блок — толкает текст вниз к полосе */}
-    <div style={{ flex: '1' }} />
+    {/* пространство снизу — чуть меньше чем сверху, чтобы картинка была выше центра */}
+    <div style={{ flex: '0.6' }} />
 
-    {/* текстовый блок — прижат к низу */}
+    {/* текстовый блок */}
     <div className="px-10 pb-4 flex-shrink-0">
       {/* бейдж */}
       <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4 w-fit"
