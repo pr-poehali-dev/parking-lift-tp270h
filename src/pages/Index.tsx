@@ -111,7 +111,7 @@ const Page1 = () => (
     </div>
 
     {/* текстовый блок */}
-    <div className="px-10 pt-3 pb-4 flex-shrink-0">
+    <div className="px-10 pt-0 pb-2 flex-shrink-0" style={{ marginTop: '-12px' }}>
       {/* бейдж */}
       <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4 w-fit"
         style={{ borderColor: `${ORANGE}50`, background: `${ORANGE}18`, color: ORANGE }}>
