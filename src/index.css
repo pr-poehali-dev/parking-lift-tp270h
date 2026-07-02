@@ -132,6 +132,11 @@
   display: block;
 }
 
+@page {
+  margin: 0 !important;
+  size: A4 portrait;
+}
+
 @media print {
   html,
   body {
