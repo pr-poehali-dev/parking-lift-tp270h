@@ -113,11 +113,8 @@ const Page1 = () => (
       </div>
     </div>
 
-    {/* пространство снизу — чуть меньше чем сверху, чтобы картинка была выше центра */}
-    <div style={{ flex: '0.6' }} />
-
     {/* текстовый блок */}
-    <div className="px-10 pb-4 flex-shrink-0">
+    <div className="px-10 pt-4 pb-4 flex-shrink-0">
       {/* бейдж */}
       <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4 w-fit"
         style={{ borderColor: `${ORANGE}50`, background: `${ORANGE}18`, color: ORANGE }}>
