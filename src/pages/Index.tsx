@@ -263,7 +263,7 @@ const Page4 = () => (
 
     <div className="flex-1 px-10 py-8 grid grid-cols-2 gap-8">
       {/* левая колонка: характеристики + стоимость */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col">
         <div>
           <SectionLabel>Спецификация</SectionLabel>
           <H2 white>Технические характеристики</H2>
@@ -279,7 +279,10 @@ const Page4 = () => (
           </div>
         </div>
 
-        {/* стоимость — под характеристиками */}
+        {/* распорка — прижимает блок стоимости к низу */}
+        <div className="flex-1" />
+
+        {/* стоимость — выровнена по низу с блоком контактов */}
         <div className="rounded-xl p-5 flex items-center gap-4" style={{ background: ORANGE }}>
           <div>
             <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-1">Стоимость</div>
@@ -294,8 +297,8 @@ const Page4 = () => (
       </div>
 
       {/* правая колонка: опции + контакты */}
-      <div className="flex flex-col gap-6">
-        <div>
+      <div className="flex flex-col">
+        <div className="flex-1">
           <SectionLabel>Опции</SectionLabel>
           <H2 white>Дополнительная комплектация</H2>
           <p className="text-[9px] mt-0.5 mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Стоимость уточняйте у специалистов</p>
@@ -310,25 +313,25 @@ const Page4 = () => (
           </div>
         </div>
 
-        {/* контакты */}
-        <div className="rounded-xl p-5" style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
-          <div className="font-display text-base font-bold uppercase text-white mb-3">Связаться с нами</div>
-          <div className="space-y-2">
-            {[
-              { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'   },
-              { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru' },
-              { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'     },
-            ].map(c => (
-              <div key={c.label} className="flex items-center gap-3">
-                <div className="flex h-7 w-7 items-center justify-center rounded-lg" style={{ background: ORANGE }}>
-                  <Icon name={c.icon} size={14} className="text-white" />
+        {/* контакты — оранжевый стиль как у блока стоимости */}
+        <div className="rounded-xl p-5 flex items-center gap-4 mt-5" style={{ background: ORANGE }}>
+          <div className="flex-1">
+            <div className="text-[10px] uppercase tracking-widest font-semibold text-white opacity-80 mb-3">Связаться с нами</div>
+            <div className="space-y-2">
+              {[
+                { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'   },
+                { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru' },
+                { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'     },
+              ].map(c => (
+                <div key={c.label} className="flex items-center gap-2">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-lg flex-shrink-0"
+                    style={{ background: 'rgba(255,255,255,0.2)' }}>
+                    <Icon name={c.icon} size={13} className="text-white" />
+                  </div>
+                  <div className="font-display text-[12px] font-bold text-white">{c.val}</div>
                 </div>
-                <div>
-                  <div className="text-[8px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>{c.label}</div>
-                  <div className="font-display text-[13px] font-bold text-white">{c.val}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -338,9 +341,6 @@ const Page4 = () => (
     <div className="px-10 py-4 flex items-center justify-between"
       style={{ background: 'rgba(0,0,0,0.25)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
       <span className="font-display text-sm font-bold uppercase tracking-wide text-white">ИТЦ Сибири</span>
-      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>
-        Производитель оставляет за собой право вносить изменения. Расхождение габаритов ±50 мм.
-      </span>
       <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>4 / 4</span>
     </div>
   </div>
