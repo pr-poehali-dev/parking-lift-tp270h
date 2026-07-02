@@ -131,7 +131,7 @@ const Page1 = () => (
 
       <div className="flex items-center">
         <div className="overflow-hidden rounded-xl w-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
-          <img src={IMG_HERO} alt="TP-270H" className="w-full object-cover" style={{ height: '340px' }} />
+          <img src={IMG_HERO} alt="TP-270H" className="w-full object-contain" />
         </div>
       </div>
     </div>
