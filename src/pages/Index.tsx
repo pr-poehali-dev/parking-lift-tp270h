@@ -104,14 +104,14 @@ const Page1 = () => (
     </div>
 
     {/* картинка — занимает оставшееся место */}
-    <div className="flex-1 px-10 pt-2 min-h-0" style={{ marginTop: '25%' }}>
+    <div className="flex-1 px-10 pt-1 min-h-0">
       <div className="overflow-hidden rounded-xl w-full h-full" style={{ border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 60px rgba(0,0,0,0.4)' }}>
         <img src={IMG_HERO} alt="TP-270H" className="w-full h-full object-cover object-center" style={{ display: 'block' }} />
       </div>
     </div>
 
     {/* текстовый блок */}
-    <div className="px-10 pt-4 pb-5 flex-shrink-0">
+    <div className="px-10 pt-3 pb-4 flex-shrink-0">
       {/* бейдж */}
       <div className="inline-flex items-center gap-2 rounded-full border px-3 py-1 mb-4 w-fit"
         style={{ borderColor: `${ORANGE}50`, background: `${ORANGE}18`, color: ORANGE }}>
