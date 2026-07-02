@@ -103,7 +103,7 @@ const Page1 = () => (
       </div>
       <div className="flex items-center gap-2">
         <Icon name="Phone" size={14} style={{ color: ORANGE }} />
-        <span className="font-display text-sm font-semibold text-white">8 (800) 511-06-55</span>
+        <span className="font-display text-sm font-semibold text-white">8-905-975-58-88</span>
       </div>
     </div>
 
@@ -153,7 +153,7 @@ const Page1 = () => (
       <span className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
         Производитель: SolidParking, КНР
       </span>
-      <span className="font-display text-sm font-bold" style={{ color: ORANGE }}>itc-sibiri.ru</span>
+      <span className="font-display text-sm font-bold" style={{ color: ORANGE }}>itc-siberia.ru</span>
       <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>1 / 4</span>
     </div>
   </div>
@@ -313,9 +313,9 @@ const Page4 = () => (
           <div className="font-display text-base font-bold uppercase text-white mb-3">Связаться с нами</div>
           <div className="space-y-2">
             {[
-              { icon: 'Phone', label: 'Телефон', val: '8 (800) 511-06-55' },
-              { icon: 'Mail',  label: 'Email',   val: 'info@itc-sibiri.ru'  },
-              { icon: 'Globe', label: 'Сайт',    val: 'itc-sibiri.ru'       },
+              { icon: 'Phone', label: 'Телефон', val: '8-905-975-58-88'    },
+              { icon: 'Mail',  label: 'Email',   val: 'itc2555888@mail.ru'  },
+              { icon: 'Globe', label: 'Сайт',    val: 'itc-siberia.ru'      },
             ].map(c => (
               <div key={c.label} className="flex items-center gap-3">
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg"
