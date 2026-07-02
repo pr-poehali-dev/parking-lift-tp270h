@@ -101,10 +101,6 @@ const Page1 = () => (
         />
         <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
       </div>
-      <div className="flex items-center gap-2">
-        <Icon name="Phone" size={14} style={{ color: ORANGE }} />
-        <span className="font-display text-sm font-semibold text-white">8-905-975-58-88</span>
-      </div>
     </div>
 
     {/* картинка — занимает оставшееся место */}
@@ -134,13 +130,13 @@ const Page1 = () => (
     </div>
 
     {/* полоса низа */}
-    <div className="px-10 py-3 flex items-center justify-between flex-shrink-0"
+    <div className="px-10 py-3 flex items-center gap-6 flex-shrink-0"
       style={{ background: 'rgba(255,255,255,0.05)', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-      <span className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.4)' }}>
-        Производитель: SolidParking, КНР
-      </span>
       <span className="font-display text-sm font-bold" style={{ color: ORANGE }}>itc-siberia.ru</span>
-      <span className="text-[9px]" style={{ color: 'rgba(255,255,255,0.4)' }}>1 / 4</span>
+      <div className="flex items-center gap-2">
+        <Icon name="Phone" size={13} style={{ color: 'rgba(255,255,255,0.5)' }} />
+        <span className="font-display text-sm font-semibold text-white">8-905-975-58-88</span>
+      </div>
     </div>
   </div>
 );
