@@ -98,7 +98,6 @@ const Page1 = () => (
         </div>
         <div>
           <div className="font-display text-base font-bold uppercase tracking-wide text-white">ИТЦ Сибири</div>
-          <div className="text-[9px] uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)' }}>Парковочные системы</div>
         </div>
       </div>
       <div className="flex items-center gap-2">
@@ -117,6 +116,7 @@ const Page1 = () => (
           <span className="text-[9px] uppercase tracking-widest font-semibold">Коммерческое предложение</span>
         </div>
 
+        <p className="mb-2 text-sm font-semibold uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.6)' }}>Парковочные системы</p>
         <h1 className="font-display font-bold uppercase leading-none" style={{ color: 'white', fontSize: '52px' }}>
           Подъёмник<br />
           <span style={{ color: ORANGE }}>TP-270H</span>
